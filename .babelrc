@@ -1,0 +1,30 @@
+{
+  "presets": [
+    "@babel/preset-env",
+    [
+      "@babel/preset-react",
+      {
+        "runtime": "automatic"
+      }
+    ],
+    "@babel/preset-typescript"
+  ],
+  "plugins": [
+    "@babel/plugin-syntax-dynamic-import",
+    ["@babel/plugin-proposal-object-rest-spread", { "useBuiltIns": true }],
+    ["@babel/plugin-transform-runtime", { "helpers": false, "regenerator": true }],
+    ["module-resolver", {
+      "root": ["./"],
+      "extensions": [".js", ".ts", ".tsx", ".json"],
+      "alias": {
+        "@": "./src",
+        "@config": "./config",
+        "@components": "./src/components",
+        "@context": "./src/context",
+        "@hooks": "./src/hooks",
+        "@helpers": "./src/helpers",
+        "@routes": "./src/routes"
+      }
+    }]
+  ]
+}
